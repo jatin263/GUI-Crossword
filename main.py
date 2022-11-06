@@ -1,10 +1,15 @@
 from tkinter import *
+def f(e):
+   contd=e.get()
+   print(contd)
+
+
 def callback(var):
    f=entryboxes[int(str(var)[-1])]
-   
+   print(f)
    content= var.get()[0]
    if content.isalpha():
-      f.delete(0, END)   
+      f.delete(0, END)
       f.insert(0, content)
    else:
       f.delete(0,END)
@@ -64,7 +69,7 @@ var18.trace("w", lambda name, index,mode, var=var18: callback(var18))
 var19.trace("w", lambda name, index,mode, var=var19: callback(var19))
 var20.trace("w", lambda name, index,mode, var=var20: callback(var20))
 #Create an Entry widget
-e1 = Entry(root, textvariable=var,width=2,font=2)
+e1 = Entry(root, textvariable=var,width=2,font=2,validatecommand=f(e1))
 e1.grid(row=0,column=0)
 entryboxes.append(e1)
 e2 = Entry(root, textvariable=var2,width=2,font=2)
