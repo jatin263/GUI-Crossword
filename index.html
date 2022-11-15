@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Word Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Cross Word Game</h1>
+<hr>
+<div class="content-body">
+    <table>
+        <tr><td><input type="text" name="in[]" id="in" oninput="check()"></td><td><input type="text" name="in[]" id="in" oninput="check()"></td><td><input type="text" name="in[]" id="in" oninput="check()"></td></tr>
+        <tr><td><input type="text" name="in[]" id="in" oninput="check()"></td><td><input type="text" name="in[]" id="in" oninput="check()"></td><td><input type="text" name="in[]" id="in" oninput="check()"></td></tr>
+        <tr><td><input type="text" name="in[]" id="in" oninput="check()"></td><td><input type="text" name="in[]" id="in" oninput="check()"></td><td><input type="text" name="in[]" id="in" oninput="check()"></td></tr>
+    </table>
+</div>
+    <script>
+       var inputArray = document.getElementsByName("in[]");
+       var len = inputArray.length;
+       function check(){
+            for(var i=0;i<len;i++){
+                var inn = inputArray[i].value;
+                if(inn.match(/^[a-zA-Z-]+$/)){
+                    if(inn.length >1){
+                        inputArray[i].value = inn[0];
+                    }
+                }
+                else{
+                    if(inn.match(/^[0-9!@#$%^&*(){}[];:'"<,>.]/)){
+                        inputArray[i].value = "";
+                    }
+                    else{
+                        inputArray[i].value="";
+                    }
+                }
+            }
+       }
+    </script>
+</body>
+</html>

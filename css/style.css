@@ -1,0 +1,19 @@
+body{
+    margin: 0px 0px;
+    background-color: slateblue;
+    color: aliceblue;
+}
+h1{
+    text-align: center;
+}
+
+#in{
+    width: 1.8vh;
+    text-align: center;
+    height: 2vh;
+    font-size: 1.5vh;
+}
+
+.content-body{
+    padding: 5vw;
+}
